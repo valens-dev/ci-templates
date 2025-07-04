@@ -1,9 +1,10 @@
 name: Delete merged branch
 
 on:
-  pull_request:
-    types:
-      - closed
+  workflow_call:
+    secrets:
+      PAT_TOKEN_BRANCH_DELETION:
+        required: true
 
 jobs:
   delete-branch:
